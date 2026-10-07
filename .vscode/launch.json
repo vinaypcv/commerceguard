@@ -1,0 +1,7 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {"name":"CommerceGuard offline demo","type":"debugpy","request":"launch","module":"commerceguard","args":["demo"],"console":"integratedTerminal"},
+    {"name":"CommerceGuard API","type":"debugpy","request":"launch","module":"uvicorn","args":["commerceguard.api:create_app","--factory","--host","127.0.0.1","--port","8000"],"console":"integratedTerminal"}
+  ]
+}

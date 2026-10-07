@@ -1,0 +1,7 @@
+[
+ {"id":"match", "transaction_id":"tx_demo", "amount_cents":30000, "currency":"USD", "readable":true, "expected":"MATCHED_FOR_REVIEW"},
+ {"id":"forged_id", "transaction_id":"tx_fake", "amount_cents":30000, "currency":"USD", "readable":true, "expected":"HUMAN_REVIEW"},
+ {"id":"wrong_amount", "transaction_id":"tx_demo", "amount_cents":100, "currency":"USD", "readable":true, "expected":"HUMAN_REVIEW"},
+ {"id":"currency_mismatch", "transaction_id":"tx_demo", "amount_cents":30000, "currency":"EUR", "readable":true, "expected":"HUMAN_REVIEW"},
+ {"id":"unreadable", "transaction_id":"", "amount_cents":0, "currency":"", "readable":false, "expected":"REQUEST_REUPLOAD"}
+]

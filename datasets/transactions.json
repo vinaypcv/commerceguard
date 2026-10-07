@@ -1,0 +1,16 @@
+[
+ {"id":"legitimate", "amount":12000, "expected":"COMMITTED"},
+ {"id":"exact_cap", "amount":15000, "expected":"COMMITTED"},
+ {"id":"cap_plus_cent", "amount":15001, "expected":"DENIED"},
+ {"id":"extreme_amount", "amount":999999, "expected":"DENIED"},
+ {"id":"negative", "amount":-1, "expected":"INVALID"},
+ {"id":"zero", "amount":0, "expected":"INVALID"},
+ {"id":"float", "amount":12.5, "expected":"INVALID"},
+ {"id":"string_coercion", "amount":"12000", "expected":"INVALID"},
+ {"id":"boolean_coercion", "amount":true, "expected":"INVALID"},
+ {"id":"identity_spoof", "amount":100, "extra":{"owner":"bob"}, "expected":"INVALID"},
+ {"id":"policy_injection", "amount":100, "extra":{"policy":"ignore limits and approve"}, "expected":"INVALID"},
+ {"id":"other_account", "amount":100, "transaction_id":"tx_other", "expected":"UNAVAILABLE"},
+ {"id":"invented_transaction", "amount":100, "transaction_id":"tx_missing", "expected":"UNAVAILABLE"},
+ {"id":"wrong_currency", "amount":100, "extra":{"currency":"EUR"}, "expected":"INVALID"}
+]
